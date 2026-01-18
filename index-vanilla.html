@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Order Tracking</title>
+  <link rel="stylesheet" href="styles-vanilla.css">
+</head>
+<body>
+  <div id="app" class="min-h-screen bg-gray">
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <div class="nav-container">
+        <!-- Logo -->
+        <div class="logo">
+          <span class="logo-text">amazon</span>
+          <span class="logo-suffix">.in</span>
+        </div>
+
+        <!-- Location -->
+        <div class="location">
+          <span class="location-label">Deliver to Yogye</span>
+          <div class="location-info">
+            <svg class="icon-sm" fill="none" viewBox="0 0 14 14">
+              <path d="M9.91667 5.25C9.91667 8.16258 6.68558 11.1959 5.60058 12.1327C5.39294 12.2889 5.10706 12.2889 4.89942 12.1327C3.81442 11.1959 0.583333 8.16258 0.583333 5.25C0.583333 2.6744 2.6744 0.583333 5.25 0.583333C7.8256 0.583333 9.91667 2.6744 9.91667 5.25" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+              <path d="M3.5 5.25C3.5 6.21585 4.28415 7 5.25 7C6.21585 7 7 6.21585 7 5.25C7 4.28415 6.21585 3.5 5.25 3.5C4.28415 3.5 3.5 4.28415 3.5 5.25V5.25" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+            </svg>
+            <span class="location-city">Agra 282007</span>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <select class="search-select">
+            <option>All</option>
+          </select>
+          <input type="text" class="search-input" placeholder="Search Amazon.in">
+          <button class="search-button">
+            <svg class="icon-md" fill="none" viewBox="0 0 20 20">
+              <path d="M15.8333 15.8333L12.2167 12.2167" stroke="#111" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              <path d="M0.833333 7.5C0.833333 11.1794 3.82057 14.1667 7.5 14.1667C11.1794 14.1667 14.1667 11.1794 14.1667 7.5C14.1667 3.82057 11.1794 0.833333 7.5 0.833333C3.82057 0.833333 0.833333 3.82057 0.833333 7.5V7.5" stroke="#111" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Right Menu -->
+        <div class="nav-menu">
+          <div class="nav-item">
+            <img src="https://flagcdn.com/w40/in.png" alt="India" class="flag-icon">
+            <span class="nav-text-bold">EN</span>
+          </div>
+
+          <div class="nav-item">
+            <span class="nav-text-sm">Hello, Yogye</span>
+            <span class="nav-text-bold">Account & Lists</span>
+          </div>
+
+          <div class="nav-item">
+            <span class="nav-text-sm">Returns</span>
+            <span class="nav-text-bold">& Orders</span>
+          </div>
+
+          <div class="cart-container">
+            <svg class="icon-lg" fill="none" viewBox="0 0 32 32">
+              <path d="M1.33333 1.33333H4L7.54667 17.8933C7.81504 19.1444 8.93415 20.0285 10.2133 20H23.2533C24.5036 19.998 25.5845 19.1277 25.8533 17.9067L28.0533 8H5.42667" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.66667" />
+              <path d="M7.93333 26.6C7.93333 27.3359 8.53078 27.9333 9.26667 27.9333C10.0026 27.9333 10.6 27.3359 10.6 26.6C10.6 25.8641 10.0026 25.2667 9.26667 25.2667C8.53078 25.2667 7.93333 25.8641 7.93333 26.6V26.6" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.66667" />
+              <path d="M22.6 26.6C22.6 27.3359 23.1974 27.9333 23.9333 27.9333C24.6692 27.9333 25.2667 27.3359 25.2667 26.6C25.2667 25.8641 24.6692 25.2667 23.9333 25.2667C23.1974 25.2667 22.6 25.8641 22.6 26.6V26.6" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.66667" />
+            </svg>
+            <span class="cart-count">3</span>
+            <span class="cart-text">Cart</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary Nav -->
+      <div class="secondary-nav">
+        <button class="nav-button">
+          <svg class="icon-sm" fill="none" viewBox="0 0 18 18">
+            <path d="M3 3.75H15M3 9H15M3 14.25H15" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+          </svg>
+          <span>All</span>
+        </button>
+        <button class="nav-button">MX Player</button>
+        <button class="nav-button">Sell</button>
+        <button class="nav-button">Amazon Pay</button>
+        <button class="nav-button">Gift Cards</button>
+        <button class="nav-button">Gift Ideas</button>
+        <button class="nav-button">Buy Again</button>
+        <button class="nav-button">AmazonBasics</button>
+        <button class="nav-button">Browsing History</button>
+        <button class="nav-button">Yogye's Amazon.in</button>
+        <button class="nav-button">Prime</button>
+        <button class="nav-button">Customer Service</button>
+      </div>
+    </nav>
+
+    <!-- Success Banner -->
+    <div class="success-banner">
+      <span class="success-text">✓ YOUR ORDER HAS BEEN BOOKED SUCCESSFULLY</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+      <div class="content-grid">
+        <!-- Left Column -->
+        <div class="left-column">
+          <!-- Progress Section -->
+          <div class="card progress-card">
+            <div class="progress-circle-container">
+              <svg class="progress-svg" viewBox="0 0 192 192">
+                <circle cx="96" cy="96" r="88" fill="none" stroke="#e5e7eb" stroke-width="12"/>
+                <circle id="progressCircle" cx="96" cy="96" r="88" fill="none" stroke="#3b82f6" stroke-width="12" stroke-linecap="round"/>
+              </svg>
+              <div class="progress-text">
+                <span id="progressValue" class="progress-percentage">93%</span>
+              </div>
+            </div>
+            <div class="progress-info">
+              <p class="progress-label">PROGRESS RATE</p>
+              <h2 class="progress-title">You're all set</h2>
+              <p class="progress-description">
+                Your order is confirmed and we're getting it ready. You'll hear from us the moment it ships.
+              </p>
+            </div>
+          </div>
+
+          <!-- Greeting Card -->
+          <div class="greeting-card">
+            <div class="greeting-header">
+              <span class="greeting-emoji">👋</span>
+              <h3 class="greeting-title">Hey Sarah!</h3>
+            </div>
+            <p class="greeting-text">
+              Your gaming gear is officially on the way. We're packing it with care and making sure everything's perfect before it heads out. You can check progress anytime right here!
+            </p>
+          </div>
+
+          <!-- Order Details -->
+          <div class="card">
+            <div class="card-header">
+              <svg class="icon-md rotating" fill="none" viewBox="0 0 20 20">
+                <path d="M15.8333 5.83162C15.8327 5.23679 15.5151 4.68737 15 4.38996L9.16667 1.05662C8.651 0.758903 8.01567 0.758903 7.5 1.05662L1.66667 4.38996C1.15153 4.68737 0.833944 5.23679 0.833334 5.83162V12.4983C0.833944 13.0931 1.15153 13.6425 1.66667 13.94L7.5 17.2733C8.01567 17.571 8.651 17.571 9.16667 17.2733L15 13.94C15.5151 13.6425 15.8327 13.0931 15.8333 12.4983V5.83162" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+                <path d="M1.08333 4.99829L8.33333 9.16496L15.5833 4.99829M8.33333 17.4983V9.16496" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+              <h3 class="card-title">Order Details</h3>
+            </div>
+            <div class="order-details">
+              <div class="detail-row">
+                <span class="detail-label">Order Number</span>
+                <span class="detail-value">#FG-82354297-1234567</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Wireless Headphones - Black</span>
+                <span class="detail-value">$249.99</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Premium Laptop Stand</span>
+                <span class="detail-value">$89.99</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Shipping</span>
+                <span class="detail-value-green">Free</span>
+              </div>
+              <div class="detail-row detail-total">
+                <span>Total</span>
+                <span>$339.98</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Delivery Address -->
+          <div class="card">
+            <div class="card-header">
+              <svg class="icon-md" fill="none" viewBox="0 0 14 14">
+                <path d="M9.91667 5.25C9.91667 8.16258 6.68558 11.1959 5.60058 12.1327C5.39294 12.2889 5.10706 12.2889 4.89942 12.1327C3.81442 11.1959 0.583333 8.16258 0.583333 5.25C0.583333 2.6744 2.6744 0.583333 5.25 0.583333C7.8256 0.583333 9.91667 2.6744 9.91667 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                <path d="M3.5 5.25C3.5 6.21585 4.28415 7 5.25 7C6.21585 7 7 6.21585 7 5.25C7 4.28415 6.21585 3.5 5.25 3.5C4.28415 3.5 3.5 4.28415 3.5 5.25V5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+              </svg>
+              <h3 class="card-title">Delivery Address</h3>
+            </div>
+            <div class="address-info">
+              <p class="address-name">Sarah Jefferson</p>
+              <p class="address-line">752 Evergeen Terrace</p>
+              <p class="address-line">Springfield, IL 62701</p>
+              <p class="address-line">Phone: (555) 123-4567</p>
+            </div>
+          </div>
+
+          <!-- Seller Information -->
+          <div class="card">
+            <div class="card-header">
+              <svg class="icon-md" fill="none" viewBox="0 0 12 12">
+                <path d="M5.7625 1.1475C5.8072 1.0572 5.89924 1.00005 6 1.00005C6.10076 1.00005 6.1928 1.0572 6.2375 1.1475L7.3925 3.487C7.54675 3.79974 7.84495 4.01661 8.19 4.067L10.773 4.445C10.8728 4.45947 10.9558 4.52937 10.987 4.6253C11.0182 4.72124 10.9922 4.82657 10.92 4.897L9.052 6.716C8.80169 6.95956 8.68742 7.31078 8.7465 7.655L9.1875 10.225C9.20513 10.3248 9.16428 10.4259 9.08227 10.4855C9.00026 10.5451 8.89147 10.5526 8.802 10.505L6.493 9.291C6.1842 9.12866 5.8153 9.12866 5.5065 9.291L3.198 10.505C3.10857 10.5523 2.99998 10.5446 2.91815 10.4851C2.83631 10.4256 2.79551 10.3247 2.813 10.225L3.2535 7.6555C3.31275 7.31112 3.19847 6.95967 2.948 6.716L1.08 4.8975C1.00716 4.82714 0.980781 4.72142 1.01204 4.6251C1.0433 4.52877 1.12672 4.45868 1.227 4.4445L3.8095 4.067C4.15492 4.01692 4.45356 3.80001 4.608 3.487L5.7625 1.1475" fill="currentColor" />
+              </svg>
+              <h3 class="card-title">Seller Information</h3>
+            </div>
+            <div class="seller-info">
+              <div class="seller-name">TechGear Premium</div>
+              <div class="seller-fulfillment">Fulfilled by Amazon</div>
+              <div class="seller-rating">
+                <span class="rating-stars">★★★★★</span>
+                <span class="rating-text">4.8 rating • 3,408 reviews</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="card">
+            <h3 class="card-title">Need to Make Changes?</h3>
+            <div class="action-buttons">
+              <button class="action-button" onclick="openModal('addressModal')">
+                <svg class="icon-md" fill="none" viewBox="0 0 14 14">
+                  <path d="M9.91667 5.25C9.91667 8.16258 6.68558 11.1959 5.60058 12.1327C5.39294 12.2889 5.10706 12.2889 4.89942 12.1327C3.81442 11.1959 0.583333 8.16258 0.583333 5.25C0.583333 2.6744 2.6744 0.583333 5.25 0.583333C7.8256 0.583333 9.91667 2.6744 9.91667 5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                  <path d="M3.5 5.25C3.5 6.21585 4.28415 7 5.25 7C6.21585 7 7 6.21585 7 5.25C7 4.28415 6.21585 3.5 5.25 3.5C4.28415 3.5 3.5 4.28415 3.5 5.25V5.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <div class="action-text">
+                  <div class="action-title">Change Address</div>
+                  <div class="action-subtitle">Update delivery location</div>
+                </div>
+              </button>
+
+              <button class="action-button action-button-red" onclick="openModal('cancelModal')">
+                <svg class="icon-md" fill="none" viewBox="0 0 18 18">
+                  <path d="M11.6667 6.66667L6.66667 11.6667M6.66667 6.66667L11.6667 11.6667" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                </svg>
+                <div class="action-text">
+                  <div class="action-title">Cancel Order</div>
+                  <div class="action-subtitle">Available before shipment</div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+          <!-- Order Journey -->
+          <div class="card">
+            <h3 class="card-title">Your Order Journey</h3>
+            <div id="orderJourney" class="order-journey"></div>
+          </div>
+
+          <!-- Delivery Route -->
+          <div class="card">
+            <h3 class="card-title">Delivery Route</h3>
+            <div class="delivery-route">
+              <div class="route-path">
+                <div class="route-point">
+                  <div class="route-icon route-icon-warehouse">🏭</div>
+                  <div class="route-label">Warehouse</div>
+                  <div class="route-sublabel">Springfield</div>
+                </div>
+
+                <div class="route-line">
+                  <svg class="route-svg" preserveAspectRatio="none" viewBox="0 0 100 50">
+                    <path d="M 0 25 Q 25 10, 50 25 T 100 25" fill="none" stroke="#e5e7eb" stroke-width="3"/>
+                    <path id="routePath" d="M 0 25 Q 25 10, 50 25 T 100 25" fill="none" stroke="url(#gradient)" stroke-width="3" stroke-linecap="round"/>
+                    <defs>
+                      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#fbbf24" />
+                        <stop offset="33%" stop-color="#3b82f6" />
+                        <stop offset="66%" stop-color="#8b5cf6" />
+                        <stop offset="100%" stop-color="#10b981" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div class="delivery-truck">🚚</div>
+                  <div class="route-hub route-hub-1">
+                    <div class="hub-dot hub-blue">📍</div>
+                    <div class="hub-label">Hub 1</div>
+                  </div>
+                  <div class="route-hub route-hub-2">
+                    <div class="hub-dot hub-purple">📍</div>
+                    <div class="hub-label">Hub 2</div>
+                  </div>
+                  <div class="route-hub route-hub-3">
+                    <div class="hub-dot hub-indigo">📍</div>
+                    <div class="hub-label">Local</div>
+                  </div>
+                </div>
+
+                <div class="route-point">
+                  <div class="route-icon route-icon-home">🏠<span class="home-star">⭐</span></div>
+                  <div class="route-label">Your Home</div>
+                  <div class="route-sublabel route-sublabel-green">Agra</div>
+                </div>
+              </div>
+
+              <div class="route-stats">
+                <div class="route-stat">
+                  <div class="stat-value stat-blue">248</div>
+                  <div class="stat-label">km Distance</div>
+                </div>
+                <div class="route-stat">
+                  <div class="stat-value stat-purple">3</div>
+                  <div class="stat-label">Checkpoints</div>
+                </div>
+                <div class="route-stat">
+                  <div class="stat-value stat-green">~48h</div>
+                  <div class="stat-label">Est. Time</div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="route-info">
+              <span class="route-info-icon">⚡</span>
+              <span class="route-info-text">Your package is being prepared at our Springfield fulfillment center</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons - Compact -->
+          <div class="card compact-actions">
+            <button class="btn btn-primary" onclick="openModal('trackingModal')">
+              <svg class="icon-md" fill="none" viewBox="0 0 20 20">
+                <path d="M15.8333 5.83162C15.8327 5.23679 15.5151 4.68737 15 4.38996L9.16667 1.05662C8.651 0.758903 8.01567 0.758903 7.5 1.05662L1.66667 4.38996C1.15153 4.68737 0.833944 5.23679 0.833334 5.83162V12.4983C0.833944 13.0931 1.15153 13.6425 1.66667 13.94L7.5 17.2733C8.01567 17.571 8.651 17.571 9.16667 17.2733L15 13.94C15.5151 13.6425 15.8327 13.0931 15.8333 12.4983V5.83162" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+                <path d="M1.08333 4.99829L8.33333 9.16496L15.5833 4.99829M8.33333 17.4983V9.16496" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+              Track Your Package
+            </button>
+
+            <button class="btn btn-secondary">
+              <svg class="icon-md" fill="none" viewBox="0 0 16 16">
+                <path d="M2.25 15.75C1.42213 15.75 0.75 15.0779 0.75 14.25V2.25C0.75 1.42213 1.42213 0.750002 2.25 0.750002H8.25C8.72952 0.749225 9.18954 0.939817 9.528 1.2795L12.219 3.9705C12.5596 4.30909 12.7508 4.76974 12.75 5.25V14.25C12.75 15.0779 12.0779 15.75 11.25 15.75H2.25" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+                <path d="M8.25 0.750002V4.5C8.25 4.91394 8.58606 5.25 9 5.25H12.75M5.25 6H3.75M9.75 9H3.75M9.75 12H3.75" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+              </svg>
+              Download Invoice
+            </button>
+
+            <button class="btn btn-secondary" onclick="openModal('chatModal')">
+              <svg class="icon-md" fill="none" viewBox="0 0 18 18">
+                <path d="M2.244 12.2565C2.35428 12.5347 2.37883 12.8395 2.3145 13.1318L1.51575 15.5993C1.46342 15.8537 1.54646 16.1171 1.73525 16.2955C1.92404 16.4739 2.19169 16.5419 2.44275 16.4753L5.0025 15.7267C5.27829 15.672 5.5639 15.696 5.82675 15.7957C9.13313 17.3398 13.071 16.28 15.1558 13.285C17.2406 10.29 16.8671 6.22918 14.271 3.66465C11.675 1.10011 7.60989 0.776295 4.64058 2.8975C1.67127 5.01871 0.659654 8.96923 2.244 12.2565" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+              </svg>
+              Chat With Us
+            </button>
+          </div>
+
+          <!-- Additional Info -->
+          <div class="card info-card">
+            <div class="info-item">
+              <svg class="icon-md" fill="none" viewBox="0 0 20 20">
+                <path d="M2 9.33333H4C4.73589 9.33333 5.33333 9.93078 5.33333 10.6667V12.6667C5.33333 13.4026 4.73589 14 4 14H3.33333C2.59745 14 2 13.4026 2 12.6667V8C2 4.68851 4.68851 2 8 2C11.3115 2 14 4.68851 14 8V12.6667C14 13.4026 13.4026 14 12.6667 14H12C11.2641 14 10.6667 13.4026 10.6667 12.6667V10.6667C10.6667 9.93078 11.2641 9.33333 12 9.33333H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+              <div class="info-text">24/7 customer support</div>
+            </div>
+            <div class="info-item">
+              <svg class="icon-md" fill="none" viewBox="0 0 14 14">
+                <path d="M11.3333 8.0003C11.3333 11.3336 9 13.0003 6.22667 13.967C6.08144 14.0162 5.92369 14.0138 5.78 13.9603C3 13.0003 0.666667 11.3336 0.666667 8.0003V3.33363C0.666667 2.96569 0.96539 2.66697 1.33333 2.66697C2.66667 2.66697 4.33333 1.86697 5.49333 0.853633C5.78512 0.604345 6.21488 0.604345 6.50667 0.853633C7.67333 1.87363 9.33333 2.66697 10.6667 2.66697C11.0346 2.66697 11.3333 2.96569 11.3333 3.33363V8.0003" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33" />
+              </svg>
+              <div class="info-text">Purchase protection</div>
+            </div>
+            <div class="info-item">
+              <svg class="icon-md" fill="none" viewBox="0 0 18 18">
+                <path d="M11.6675 16.6667V12.5C11.6675 12.0398 11.2944 11.6667 10.8342 11.6667H7.50087C7.04063 11.6667 6.66754 12.0398 6.66754 12.5V16.6667M13.9792 7.75833C13.6183 7.41283 13.0493 7.41283 12.6884 7.75833C11.8835 8.52606 10.6174 8.52606 9.81254 7.75833C9.45173 7.41336 8.88334 7.41336 8.52254 7.75833C7.71753 8.52659 6.45088 8.52659 5.64587 7.75833C5.28495 7.41283 4.71595 7.41283 4.35504 7.75833C3.57954 8.49836 2.36906 8.52914 1.55696 7.82948C0.744852 7.12982 0.596212 5.92811 1.21337 5.05167L3.62087 1.565C3.93104 1.10731 4.44798 0.833232 5.00087 0.833333H13.3342C13.8854 0.833122 14.4011 1.10546 14.7117 1.56083L17.1242 5.05417C17.7415 5.93134 17.5919 7.13388 16.7785 7.83308C15.9651 8.53227 14.7537 8.49956 13.9792 7.7575" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" />
+              </svg>
+              <div class="info-text">Secure packaging & handling</div>
+            </div>
+            <div class="info-item">
+              <svg class="icon-md" fill="none" viewBox="0 0 14 14">
+                <path d="M0.666667 0.666671V4H4M0.666667 6.66667C0.666667 9.97816 3.35518 12.6667 6.66667 12.6667C8.34403 12.6604 9.95402 12.0059 11.16 10.84L12.6667 9.33334" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.833" />
+                <path d="M12.6667 6.66667C12.6667 3.35518 9.97816 0.666671 6.66667 0.666671C4.9893 0.672981 3.37931 1.32749 2.17333 2.49334L0.666667 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.833" />
+              </svg>
+              <div class="info-text">30-day return policy</div>
+            </div>
+          </div>
+
+          <!-- Countdown Timer -->
+          <div class="countdown-card">
+            <div class="countdown-label">⏰ Hurry up! Your package should arrive by:</div>
+            <div class="countdown-timer">
+              <div class="timer-box">
+                <div id="days" class="timer-value">0</div>
+                <div class="timer-label">DAYS</div>
+              </div>
+              <div class="timer-box">
+                <div id="hours" class="timer-value">47</div>
+                <div class="timer-label">HRS</div>
+              </div>
+              <div class="timer-box">
+                <div id="minutes" class="timer-value">59</div>
+                <div class="timer-label">MIN</div>
+              </div>
+            </div>
+            <div class="countdown-date">Wednesday, January 21</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4 class="footer-title">Get to Know Us</h4>
+          <ul class="footer-list">
+            <li>About Amazon</li>
+            <li>Careers</li>
+            <li>Press Releases</li>
+            <li>Amazon Science</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Connect with Us</h4>
+          <ul class="footer-list">
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Instagram</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Make Money with Us</h4>
+          <ul class="footer-list">
+            <li>Sell on Amazon</li>
+            <li>Sell under Amazon Accelerator</li>
+            <li>Protect and Build Your Brand</li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Let Us Help You</h4>
+          <ul class="footer-list">
+            <li>Your Account</li>
+            <li>Returns Centre</li>
+            <li>100% Purchase Protection</li>
+            <li>Help</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Modals -->
+  <div id="addressModal" class="modal">
+    <div class="modal-backdrop" onclick="closeModal('addressModal')"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Change Delivery Address</h2>
+        <button class="modal-close" onclick="closeModal('addressModal')">
+          <svg class="icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" value="Sarah Jefferson">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Street Address</label>
+          <input type="text" class="form-input" value="752 Evergreen Terrace">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">City</label>
+            <input type="text" class="form-input" value="Springfield">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Zip Code</label>
+            <input type="text" class="form-input" value="62701">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" value="(555) 123-4567">
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary" onclick="updateAddress()">Update Address</button>
+          <button class="btn btn-secondary" onclick="closeModal('addressModal')">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cancelModal" class="modal">
+    <div class="modal-backdrop" onclick="closeModal('cancelModal')"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Cancel Order</h2>
+        <button class="modal-close" onclick="closeModal('cancelModal')">
+          <svg class="icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="warning-box">
+          <p>⚠️ Are you sure you want to cancel this order? This action cannot be undone.</p>
+        </div>
+        <div class="order-summary">
+          <p class="summary-title">Order Details:</p>
+          <ul class="summary-list">
+            <li>• Order #FG-82354297-1234567</li>
+            <li>• Total Amount: $339.98</li>
+            <li>• Items: 2</li>
+          </ul>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Reason for cancellation (optional)</label>
+          <select class="form-input">
+            <option>Select a reason...</option>
+            <option>Found a better price</option>
+            <option>Changed my mind</option>
+            <option>Ordered by mistake</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-danger" onclick="cancelOrder()">Confirm Cancellation</button>
+          <button class="btn btn-secondary" onclick="closeModal('cancelModal')">Keep Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="trackingModal" class="modal">
+    <div class="modal-backdrop" onclick="closeModal('trackingModal')"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Track Your Package</h2>
+        <button class="modal-close" onclick="closeModal('trackingModal')">
+          <svg class="icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="success-box">
+          <p class="success-box-title">✓ Package is on track</p>
+          <p class="success-box-text">Expected delivery: Wednesday, January 21</p>
+        </div>
+        
+        <div class="tracking-steps">
+          <div class="tracking-step">
+            <div class="tracking-icon tracking-icon-complete">✓</div>
+            <div class="tracking-line tracking-line-complete"></div>
+            <div class="tracking-info">
+              <p class="tracking-title">Order Confirmed</p>
+              <p class="tracking-time">Jan 17, 2026 at 2:34 PM</p>
+            </div>
+          </div>
+          
+          <div class="tracking-step">
+            <div class="tracking-icon tracking-icon-current">📦</div>
+            <div class="tracking-line"></div>
+            <div class="tracking-info">
+              <p class="tracking-title">Preparing Shipment</p>
+              <p class="tracking-time">Expected: Jan 17, 2026 at 5:30 PM</p>
+            </div>
+          </div>
+          
+          <div class="tracking-step">
+            <div class="tracking-icon tracking-icon-pending">🚚</div>
+            <div class="tracking-line"></div>
+            <div class="tracking-info">
+              <p class="tracking-title">In Transit</p>
+              <p class="tracking-time">Expected: Jan 18, 2026 at 8:35 AM</p>
+            </div>
+          </div>
+          
+          <div class="tracking-step">
+            <div class="tracking-icon tracking-icon-pending">📍</div>
+            <div class="tracking-info">
+              <p class="tracking-title">Out for Delivery</p>
+              <p class="tracking-time">Expected: Jan 20, 2026 at 6:30 PM</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="info-box">
+          <p>💡 Tip: Download our mobile app for real-time notifications about your package.</p>
+        </div>
+        
+        <button class="btn btn-primary btn-full" onclick="closeModal('trackingModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="chatModal" class="modal">
+    <div class="modal-backdrop" onclick="closeModal('chatModal')"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Chat with Customer Support</h2>
+        <button class="modal-close" onclick="closeModal('chatModal')">
+          <svg class="icon-md" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="chat-messages">
+          <div class="chat-message chat-bot">
+            <div class="chat-avatar">🤖</div>
+            <div class="chat-bubble">
+              <p>Hello! I'm your Amazon assistant. How can I help you today?</p>
+              <p class="chat-time">Just now</p>
+            </div>
+          </div>
+          
+          <div class="chat-message chat-user">
+            <div class="chat-bubble">
+              <p>Hi! I want to know about my order status.</p>
+              <p class="chat-time">Just now</p>
+            </div>
+          </div>
+          
+          <div class="chat-message chat-bot">
+            <div class="chat-avatar">🤖</div>
+            <div class="chat-bubble">
+              <p>Your order #FG-82354297-1234567 is being prepared for shipment. Expected delivery is Wednesday, January 21. Is there anything else I can help you with?</p>
+              <p class="chat-time">Just now</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="chat-input-container">
+          <input type="text" class="chat-input" placeholder="Type your message...">
+          <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+        </div>
+        
+        <div class="chat-info">Average response time: Less than 2 minutes</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script-vanilla.js"></script>
+</body>
+</html>
